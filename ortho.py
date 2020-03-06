@@ -28,25 +28,5 @@ def gene2og(x="9606"):
 
 
 
-#----------------------------------------------------------------------
-'''
-padding sequences
-
-'''
-
-def pad_sequence_arrays(seq_arrays, pad_array, num, direction):
-    padded_seq = []
-    for i in seq_arrays:
-        if direction == 'both':
-            padded_seq.append([pad_array]*num + i.tolist() + [pad_array]*num)
-        elif direction == 'pre':
-            padded_seq.append([pad_array]*num + i.tolist())
-        elif direction == 'post':
-            padded_seq.append(i.tolist() + [pad_array]*num)
-        else:
-            print('Wrong Parameter!!')
-    return np.array(padded_seq)
-    
-    
     
   
